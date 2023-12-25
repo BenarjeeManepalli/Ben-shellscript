@@ -13,25 +13,25 @@ echo "$G The Script stated at ${TIMESTAMP}" &>> $LOGFILE
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
-      echo -e "ERROR:: $2 is .... $R FAILED $N"
+      echo -e "ERROR:: $2 .... $R FAILED $N"
       exit 1
        else
-          echo -e "$2 is ..... $G SUCCESS $N"  
+          echo -e "$2 ..... $G SUCCESS $N"  
     fi  # end of the condition.  
-}      
+}       
 
 if [ $ID -ne 0 ]
 then
     echo -e "$R ERROR :: You are not root user please proceed with root $N"
-    exit 1 # 1 is the failuer excuted command
+    exit 1 # 1 is the failure excuted command
 else
     echo -e "$G You are the Root user proceeding the installtion of the package"
 fi  #fi means end of the condition.
 
-dnf install mysql -y &>> $LOGFILE
+yum install mysql -y &>> $LOGFILE
 
-VALIDATE $? "Installing the mysql" &>> $LOGFILE # Installing the sql package
+VALIDATE $? "Installing the mysql"
 
-dnf install git -y &>> $LOGFILE #installing the git package
+yum install git -y &>> $LOGFILE #installing the git package
 
-VALIDATE $? "installing the git" &>> $LOGFILE  #storing the output in to log.
+VALIDATE $? "installing the git"   #storing the output in to log.
