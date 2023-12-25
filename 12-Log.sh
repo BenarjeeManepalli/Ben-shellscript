@@ -10,7 +10,7 @@ N="\e[0m"   # N is Normal Code.
 
 echo "The Script stated at ${TIMESTAMP}" &>> $LOGFILE
 
-VALIDATE (){
+VALIDATE(){
     if [ $1 -ne 0 ]
     then
       echo -e "ERROR:: $2 is .... $R FAILED $N"
