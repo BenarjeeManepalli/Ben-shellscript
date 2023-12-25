@@ -25,7 +25,7 @@ then
     echo -e "$R ERROR :: You are not root user please proceed with root $N"
     exit 1 # 1 is the failure excuted command
 else
-    echo -e "$Y You are the Root user proceeding the installtion of the package"
+    echo -e "$Y You are the Root user proceeding the installtion of the package $N"
 fi  #fi means end of the condition.
 
 yum install mysql -y &>> $LOGFILE
