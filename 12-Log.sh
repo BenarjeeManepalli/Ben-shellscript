@@ -28,10 +28,10 @@ else
     echo "$G You are the Root user proceeding the installtion of the package"
 fi  #fi means end of the condition.
 
-yum install mysql -y &>> LOGFILE
+yum install mysql -y &>> $LOGFILE
 
 VALIDATE $? "Installing the mysql" &>> LOGFILE # Installing the sql package
 
-yum install git -y &>> LOGFILE #installing the git package
+yum install git -y &>> $LOGFILE #installing the git package
 
-VALIDATE $? "installing the git" &>> LOGFILE  #storing the output in to log.
+VALIDATE $? "installing the git" &>> $LOGFILE  #storing the output in to log.
